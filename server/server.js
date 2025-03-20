@@ -25,8 +25,8 @@ app.use(cookieParser());
 // console.log("MONGODB_URI", process.env.MONGODB_URI);
 
 //routes
-import router from "./routes/user.routes.js";
-app.use("/api/users", router);
+import { router as userRouter } from "./routes/user.routes.js";
+app.use("/api/users", userRouter);
 
 connectDB();
 
