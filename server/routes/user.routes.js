@@ -16,24 +16,24 @@ import {
   authorizeAdmin,
 } from "../middlewares/auth.middleware.js";
 
-const router = Router();
+const userRouter = Router();
 
-router
+userRouter
   .route("/")
   .post(createUser)
   .get(authenticate, authorizeAdmin, getAllUsers);
-router.post("/login", loginUser);
-router.post("/logout", logoutUser);
-router
+userRouter.post("/login", loginUser);
+userRouter.post("/logout", logoutUser);
+userRouter
   .route("/profile")
   .get(authenticate, getCurrentUser)
   .put(authenticate, updateCurrentUser);
 
 // ADMIN ROUTES
-router
+userRouter
   .route("/:id")
   .delete(authenticate, authorizeAdmin, deleteUserById)
   .get(authenticate, authorizeAdmin, getUserById)
   .put(authenticate, authorizeAdmin, updateUserById);
 
-export default router;
+export default userRouter;
