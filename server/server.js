@@ -26,7 +26,9 @@ app.use(cookieParser());
 
 //routes
 import userRouter from "./routes/user.routes.js";
+import categoryRouter from "./routes/category.routes.js";
 app.use("/api/users", userRouter);
+app.use("/api/category", categoryRouter);
 
 connectDB();
 
