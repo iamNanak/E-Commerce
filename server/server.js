@@ -1,6 +1,5 @@
 //packages
 import dotenv from "dotenv";
-import path from "path";
 import express from "express";
 import cookieParser from "cookie-parser";
 
@@ -27,8 +26,11 @@ app.use(cookieParser());
 //routes
 import userRouter from "./routes/user.routes.js";
 import categoryRouter from "./routes/category.routes.js";
+import productRouter from "./routes/product.routes.js";
+
 app.use("/api/users", userRouter);
 app.use("/api/category", categoryRouter);
+app.use("/api/products", productRouter);
 
 connectDB();
 
