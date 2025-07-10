@@ -27,10 +27,17 @@ app.use(cookieParser());
 import userRouter from "./routes/user.routes.js";
 import categoryRouter from "./routes/category.routes.js";
 import productRouter from "./routes/product.routes.js";
+import uploadRouter from "./routes/upload.routes.js";
 
 app.use("/api/users", userRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/products", productRouter);
+app.use("/api/uploads", uploadRouter);
+import path from "path";
+
+const __dirname = path.resolve();
+
+app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 
 connectDB();
 

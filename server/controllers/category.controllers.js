@@ -1,6 +1,5 @@
 import Category from "../models/category.models.js";
 import asyncHandler from "../asyncHandler.js";
-import { response } from "express";
 
 const createCategory = asyncHandler(async (req, res) => {
   try {
